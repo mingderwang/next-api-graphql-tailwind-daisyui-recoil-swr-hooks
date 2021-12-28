@@ -13,7 +13,7 @@ export default function Index() {
   return (
     <div>
       {users.map((user, i) => (
-        <div key={i}>{user.id}</div>
+        <h1 className="text-3xl font-bold underline"  key={i}>{user.id}</h1>
       ))}
     </div>
   )
