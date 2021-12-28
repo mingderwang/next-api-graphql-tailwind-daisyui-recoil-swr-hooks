@@ -16,7 +16,7 @@ export default function Index() {
       <button class="btn btn-primary">daisyUI Button</button>
 
       {users.map((user, i) => (
-        <h1 className="text-3xl font-bold underline"  key={i}>{user.id}</h1>
+        <h1 class="text-1xl font-bold underline" key={i}>{user.id}, {user.name}</h1>
       ))}
     </div>
   )
