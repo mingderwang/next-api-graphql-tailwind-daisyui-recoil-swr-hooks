@@ -14,9 +14,14 @@ export default function Index() {
     <div>
       <button class="inline-block px-4 py-3 text-sm font-semibold text-center text-white uppercase transition duration-200 ease-in-out bg-indigo-500 rounded-md cursor-pointer hover:bg-indigo-600">Tailwind Button</button>
       <button class="btn btn-primary">daisyUI Button</button>
-
+      <div class="avatar">
+      </div>
       {users.map((user, i) => (
-        <h1 class="text-1xl font-bold underline" key={i}>{user.id}, {user.name}</h1>
+        <div class="avatar">
+          <div class="mb-8 rounded-btn w-24 h-24">
+            <img src={`https://i.pravatar.cc/150?img=/${user.id}`}></img>
+          </div>
+        </div>
       ))}
     </div>
   )
