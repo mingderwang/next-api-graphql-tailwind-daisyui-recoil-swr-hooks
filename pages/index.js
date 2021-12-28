@@ -1,28 +1,19 @@
 import useSWR from 'swr'
 
-const fetcher = (query) =>
-  fetch('/api/graphql', {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify({ query }),
-  })
-    .then((res) => res.json())
-    .then((json) => json.data)
+const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function Index() {
-  const { data, error } = useSWR('{ users { name } }', fetcher)
+  const { data, error } = useSWR('/api/users', fetcher)
 
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
 
-  const { users } = data
-
+  const users = data
+  console.log(data)
   return (
     <div>
       {users.map((user, i) => (
-        <div key={i}>{user.name}</div>
+        <div key={i}>{user.id}</div>
       ))}
     </div>
   )
