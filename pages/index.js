@@ -11,19 +11,17 @@ export default function Index() {
   const users = data
   console.log(data)
   return (
-    <div>
-      <button class="inline-block px-4 py-3 text-sm font-semibold text-center text-white uppercase transition duration-200 ease-in-out bg-indigo-500 rounded-md cursor-pointer hover:bg-indigo-600">Tailwind Button</button>
-      <button class="btn btn-primary">daisyUI Button</button>
-      <div class="avatar">
-      </div>
+    <div class="flex flex-wrap">
       {users.map((user, i) => (
-        <div class="card w-72 card-bordered card-compact lg:card-normal">
-          <figure>
-            <img src={`https://i.pravatar.cc/150?img=/${user.id}`}></img>
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">{user.name}</h2>
-            <p>{user.email}</p>
+        <div class="flex flex-nowrap">
+          <div class="card w-72 card-bordered card-compact lg:card-normal">
+            <figure>
+              <img src={`https://i.pravatar.cc/150?img=/${user.id}`}></img>
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">{user.name}</h2>
+              <p>{user.email}</p>
+            </div>
           </div>
         </div>
       ))}
