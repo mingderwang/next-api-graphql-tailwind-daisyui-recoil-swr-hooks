@@ -17,9 +17,13 @@ export default function Index() {
       <div class="avatar">
       </div>
       {users.map((user, i) => (
-        <div class="avatar">
-          <div class="mb-8 rounded-btn w-24 h-24">
+        <div class="card w-72 card-bordered card-compact lg:card-normal">
+          <figure>
             <img src={`https://i.pravatar.cc/150?img=/${user.id}`}></img>
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">{user.name}</h2>
+            <p>{user.email}</p>
           </div>
         </div>
       ))}
