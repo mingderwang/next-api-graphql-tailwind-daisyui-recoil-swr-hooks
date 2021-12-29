@@ -11,13 +11,13 @@ function ExampleDialog(props) {
 
   return (
     <div>
-      <button onClick={open}>Open Dialog</button>
+      <button class="btn btn-primary" onClick={open}>Open Dialog</button>
       <Dialog isOpen={showDialog} onDismiss={close}>
         <button className="close-button" onClick={close}>
           <VisuallyHidden>Close</VisuallyHidden>
           <span aria-hidden>×</span>
         </button>
-        <p>Hello there. I am a dialog</p>
+        <p>Hello there. I am a dialog using @reach/dialog@0.16.2</p>
       </Dialog>
     </div>
   )
