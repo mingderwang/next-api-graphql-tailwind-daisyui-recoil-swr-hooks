@@ -9,7 +9,16 @@ export default function Index() {
   if (!data) return <div>Loading...</div>
 
   const users = data
-  console.log(data)
+  const exceptGeo = (k) => {
+    return !k.startsWith('geo'); // ignore geo field for display
+  }
+  const jsony = (a) => {
+    return Object.entries(a)
+      .map(([k, v]) => `${k}: ${v}`) // stringfy an json object a
+      .filter(exceptGeo)
+      .join(`,\n `)
+  }
+
   return (
     <div class="flex flex-wrap">
       {users.map((user, i) => (
@@ -20,7 +29,9 @@ export default function Index() {
             </figure>
             <div class="card-body">
               <h2 class="card-title">{user.name}</h2>
-              <p>{user.email}</p>
+              <button class="btn btn-info btn-wide btn-sm">{user.email}</button>
+              <p> 🐝 </p>
+              <pre>{jsony(user.address)}</pre>
             </div>
           </div>
         </div>
