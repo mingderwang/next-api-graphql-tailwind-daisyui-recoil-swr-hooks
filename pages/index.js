@@ -29,6 +29,9 @@ export default function Index() {
             <div className="card-body">
               <h2 className="card-title">{punk.pinner.full_name}</h2>
               <p>{punk.description}</p>
+              <div class="justify-end card-actions">
+      <button class="btn btn-secondary">convert to NFT</button>
+    </div>
             </div>
           </div>
         </div>
