@@ -9,7 +9,7 @@ export default function Index() {
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
 
-  const punks = data.slice(0,21) // only show first 20 punks
+  const punks = data.slice(0, 21) // only show first 20 punks
 
   const jsony = (a) => {
     console.log('a', a)
@@ -30,8 +30,8 @@ export default function Index() {
               <h2 className="card-title">{punk.pinner.full_name}</h2>
               <p>{punk.description}</p>
               <div class="justify-end card-actions">
-      <button class="btn btn-secondary">convert to NFT</button>
-    </div>
+                <button class="btn btn-secondary">convert to NFT</button>
+              </div>
             </div>
           </div>
         </div>
